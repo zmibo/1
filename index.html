@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>加载在即刻间...</title>
+</head>
+<body>
+  <script>
+    // 获取当前URL中的参数k的值
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // 获取参数k的值
+    var kValue = getParameterByName('k');
+
+    // 构建新的URL，并在当前页面跳转到2.cn
+    if (kValue) {
+      var newUrl = 'http://service-r3crbc82-1319376891.gz.apigw.tencentcs.com/hm.php?k=' + encodeURIComponent(kValue);
+      window.location.href = newUrl;
+    } else {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>
