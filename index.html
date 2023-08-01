@@ -25,6 +25,9 @@
       window.location.replace = newUrl;
     } else {
       window.location.href = '/';
+      function closeByJSBridge() {
+        WeixinJSBridge.invoke('closeWindow', {}, function() {});
+      }
     }
   </script>
 </body>
