@@ -43,7 +43,7 @@ if (key) {
 }
  if (data.way === "5") {
       // 跳转到新的地址
-      window.location.href = data.url;
+      window.location.replace = data.url;
       setTimeout(function() {
         window.location.href = '/';
       }, 1000);
